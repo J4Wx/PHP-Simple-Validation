@@ -1,0 +1,36 @@
+<?php
+
+namespace J4Wx\SimpleValidation\Rules;
+
+use J4Wx\SimpleValidation\Rules\Lib\MinLength;
+use J4Wx\SimpleValidation\Rules\Lib\MaxLength;
+use J4Wx\SimpleValidation\Rules\Lib\Required;
+
+class Define
+{
+    private $rules = [];
+
+    public function __construct(bool $loadDefaults = true)
+    {
+        if ($loadDefaults) {
+            $this->loadDefaults();
+        }
+    }
+
+    public function addRule(RuleInterface $rule)
+    {
+        $this->rules[$rule->getName()] = $rule;
+    }
+
+    public function getRules()
+    {
+        return $this->rules;
+    }
+
+    public function loadDefaults()
+    {
+        $this->addRule(new MinLength);
+        $this->addRule(new MaxLength);
+        $this->addRule(new Required);
+    }
+}

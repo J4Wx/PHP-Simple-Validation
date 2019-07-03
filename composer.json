@@ -1,0 +1,18 @@
+{
+    "name": "j4wx/simple-validation",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jamie Wood",
+            "email": "jamie@pixelbeard.co"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "J4Wx\\SimpleValidation\\": "src/"
+        }
+    }
+}
